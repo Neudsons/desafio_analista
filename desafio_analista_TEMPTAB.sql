@@ -1,0 +1,8 @@
+CREATE TEMPORARY TABLE Usuarioxsistema 
+SELECT U.NOME, S.SISTEMA FROM
+USUARIO AS U
+INNER JOIN USUARIO_HAS_SISTEMA US
+ON U.idUsuario = US.Usuario_idUsuario
+INNER JOIN SISTEMA S
+ON S.idSistema = US.Sistema_idSistema
+group by U.CPF,S.Sistema
